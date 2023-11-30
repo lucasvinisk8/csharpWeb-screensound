@@ -15,6 +15,4 @@ internal class Connection
     {
         return new SqlConnection(connectionString);
     }
-
-   
 }

@@ -12,7 +12,7 @@ internal class ArtistaDAL
     public IEnumerable<Artista> Listar()
     {
         using var context = new ScreenSoundContext();
-        return context.Artistas.ToList(); 
+        return context.Artistas.ToList();
 
     }
 

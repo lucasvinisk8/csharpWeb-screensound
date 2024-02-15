@@ -4,10 +4,18 @@ using ScreenSound.Modelos;
 
 try
 {
-    var artistaDAL = new ArtistaDAL();
-    //artistaDAL.Adicionar(new Artista("CBJR", "Banda de Rock"));
+    var context = new ScreenSoundContext();
+    var artistaDAL = new ArtistaDAL(context);
 
-    artistaDAL.Atualizar(new Artista("A7X", "Banda de Rock Internacional"));
+    var novoArtista = new Artista("Gilberto Gil", "Compositor, cantor e produtor") { Id = 2002 };
+
+    //var deletarArtista = new Artista("Gilberto Gil", "Compositor, cantor e produtor") { Id = 1003 };
+
+    //artistaDAL.Adicionar(novoArtista);
+
+    //artistaDAL.Deletar(deletarArtista);
+
+    artistaDAL.Atualizar(novoArtista);
 
     var listaArtistas = artistaDAL.Listar();
 

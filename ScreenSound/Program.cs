@@ -4,8 +4,12 @@ using ScreenSound.Modelos;
 
 try
 {
-    var connection = new Connection();
-    var listaArtistas = connection.Listar();
+    var artistaDAL = new ArtistaDAL();
+    //artistaDAL.Adicionar(new Artista("CBJR", "Banda de Rock"));
+
+    artistaDAL.Atualizar(new Artista("A7X", "Banda de Rock Internacional"));
+
+    var listaArtistas = artistaDAL.Listar();
 
     foreach ( var artista in listaArtistas )
     {

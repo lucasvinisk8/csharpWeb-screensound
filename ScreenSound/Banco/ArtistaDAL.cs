@@ -34,4 +34,11 @@ internal class ArtistaDAL
         context.Artistas.Remove(artista);
         context.SaveChanges();
     }
+
+    public Artista RecuperarPeloNome(string nome)
+    {
+        var artista = context.Artistas.Where(x  => x.Nome == nome).FirstOrDefault();
+
+        return artista;
+    }
 }
